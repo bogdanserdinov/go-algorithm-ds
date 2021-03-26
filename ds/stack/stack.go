@@ -27,6 +27,11 @@ func (st *stack) isEmpty() bool{
 		return false
 	}
 }
+
+func (st *stack) getLength() int{
+	return len(st.s)
+}
+
 func (st *stack) pop() {
 	res := st.isEmpty()
 	if res == true {
@@ -55,5 +60,7 @@ func main(){
 	stack.pop()
 	stack.push(15)
 
+	fmt.Println(stack.getLength())
+	fmt.Println(stack.isEmpty())
 	stack.print()
 }
