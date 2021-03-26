@@ -44,7 +44,7 @@ func (st *stack) pop() {
 }
 func (st *stack) print(){
 	for i := 0; i < st.top+1;i++{
-		if i == st.top+1{
+		if i == st.top{
 			fmt.Print(st.s[i])
 			break
 		}
@@ -60,7 +60,7 @@ func main(){
 	stack.pop()
 	stack.push(15)
 
-	fmt.Println(stack.getLength())
-	fmt.Println(stack.isEmpty())
+	fmt.Println("length -> ",stack.getLength())
+	fmt.Println("is empty? ->",stack.isEmpty())
 	stack.print()
 }
