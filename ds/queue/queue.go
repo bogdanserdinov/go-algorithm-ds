@@ -61,6 +61,15 @@ func(q *queue) dequeue(){
 	}
 }
 
+func(q *queue) peek() int{
+	if q.isEmpty(){
+		fmt.Println("queue is empty, could not peek first item")
+		return -1
+	}else{
+		return q.items[q.front]
+	}
+}
+
 func(q *queue) print(){
 	for i:= q.front;i <= q.rear;i++{
 		if i == q.rear{
@@ -78,6 +87,13 @@ func main() {
 	q.enqueue(12)
 	q.enqueue(13)
 
+	first := q.peek()
+	fmt.Println("first in queue -> ",first )
+	q.print()
+
+	fmt.Println()
+
 	q.dequeue()
+	fmt.Println("---after dequeue---")
 	q.print()
 }
